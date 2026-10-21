@@ -70,7 +70,7 @@ def setup_page_routes(app: FastAPI) -> None:
     @app.get("/", response_class=HTMLResponse)
     async def auth_page(request: Request):
         """认证页面"""
-        return templates.TemplateResponse("dashboard.html", {"request": request, ...})
+        return templates.TemplateResponse("auth.html", {"request": request})
     @app.post("/auth")
     async def authenticate(request: Request):
         """处理认证请求"""
